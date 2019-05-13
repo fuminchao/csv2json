@@ -1,4 +1,6 @@
 # csv2json
+[![Build Status](https://travis-ci.com/fuminchao/csv2json.svg?branch=master)](https://travis-ci.com/fuminchao/csv2json)
+
 Parse CSV into JSON Object
 
 # Sample
