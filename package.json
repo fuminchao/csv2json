@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/fuminchao/csv2json/issues"
   },
-  "homepage": "https://github.com/fuminchao/csv2json#readme"
+  "homepage": "https://github.com/fuminchao/csv2json#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }

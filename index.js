@@ -8,7 +8,7 @@ function tokenize(line) {
   const currentToken = [];
 
   tokens.push = function(str) {
-    return Array.prototype.push.call(this, str.replace(/^\s*"(.*)"\s*$/, '$1').replace(/""/g, "\""));
+    return Array.prototype.push.call(this, str.replace(/^\s*"(.*)"\s*$/, '$1').replace(/""/g, "\"").trim());
   };
 
   line.split(/,/).forEach((t) => {
