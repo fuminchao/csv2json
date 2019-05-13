@@ -1,4 +1,4 @@
-const {readCSVasJson} = require('../index');
+const readCSVasJson = require('../index');
 const Readable = require('stream').Readable;
 
 function readString(str) {

@@ -35,10 +35,7 @@ function tokenize(line) {
 
 const readCSVasJson = (inputStream) => new Promise((resolve, reject) => {
 
-  const rl = readline.createInterface({
-    input: inputStream,
-    crlfDelay: Infinity,
-  });
+  const rl = readline.createInterface({ input: inputStream, crlfDelay: Infinity, });
 
   const results = [];
 
@@ -71,9 +68,4 @@ const readCSVasJson = (inputStream) => new Promise((resolve, reject) => {
   rl.on('close', () => resolve(results));
 });
 
-module.exports = {
-  /**
-   * Read CSV file as JSON, whose keys come from the first line of the CSV file
-   */
-  readCSVasJson,
-};
+module.exports = readCSVasJson;
