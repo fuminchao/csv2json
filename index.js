@@ -8,18 +8,16 @@ function tokenize(line) {
   const currentToken = [];
 
   tokens.push = function(str) {
-    return Array.prototype.push.call(this, str.replace(/^\s*"(.*)"\s*$/, '$1').replace(/""/g, "\"").trim());
+    return Array.prototype.push.call(this, str.replace(/^\s*"(.*)"\s*$/, '$1').replace(/\0/g, "\"").trim());
   };
 
-  line.split(/,/).forEach((t) => {
+  line.replace(/""/g, '\0').split(/,/).forEach((t) => {
 
     if (currentToken.length > 0) {
+      currentToken.push(t);
       if (/"\s*$/.test(t)) {
-        currentToken.push(t);
         tokens.push(currentToken.join(',').trim());
         currentToken.length = 0;
-      } else {
-        currentToken.push(t);
       }
       return;
     }
